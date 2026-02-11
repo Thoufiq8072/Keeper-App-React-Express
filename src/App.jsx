@@ -23,7 +23,6 @@ function App() {
   async function addNote(note) {
     try {
       const response = await axios.post("/api/notes", note);
-      console.log("Note added:", response.data);
       setNotes((prevNotes) => [...prevNotes, response.data]);
     } catch (error) {
       console.error("Error adding note:", error);
